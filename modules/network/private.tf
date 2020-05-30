@@ -7,6 +7,7 @@ resource "aws_subnet" "private_subnet_1a" {
     tags    =   {
         Name    =   format("%s-private-1a",var.cluster_name)
         Deploy  =   var.deploy
+        "kubernetes.io/cluster/${var.cluster_name}" = "shared"
     }
   
 }
@@ -20,6 +21,7 @@ resource "aws_subnet" "private_subnet_1c" {
     tags    =   {
         Name    =   format("%s-private-1c",var.cluster_name)
         Deploy  =   var.deploy
+        "kubernetes.io/cluster/${var.cluster_name}" = "shared"
     }
   
 }
